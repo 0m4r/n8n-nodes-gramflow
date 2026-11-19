@@ -1,6 +1,6 @@
 {
   "name": "@0m4r/n8n-nodes-gramflow",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "description": "Gramflow is a production-ready Instagram automation toolkit for n8n. Publish images, Reels, Stories, and carousels; moderate comments; send DMs; search hashtags; manage tokens; and react to real-time Instagram events—using Meta's official Instagram and Facebook Graph APIs.",
   "license": "MIT",
   "homepage": "https://github.com/0m4r/n8n-nodes-gramflow#readme",
