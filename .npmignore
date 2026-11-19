@@ -2,8 +2,18 @@
 **/*.test.js
 **/*.test.d.ts
 **/*.test.js.map
+**/*.test.ts
+**/*.test.ts.map
 **/*.spec.js
 **/*.spec.d.ts
 **/*.spec.js.map
 **/tests/**
 **/__tests__/**
+
+# Ignore build cache and extra files in dist/
+dist/package.json
+dist/tsconfig.tsbuildinfo
+
+# Ignore dist/ package.json and tsconfig from publication
+**/dist/package.json
+**/dist/tsconfig.tsbuildinfo
