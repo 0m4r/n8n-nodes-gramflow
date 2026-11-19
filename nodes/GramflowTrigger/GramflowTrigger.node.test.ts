@@ -5,7 +5,7 @@ import type {
 } from 'n8n-workflow';
 import { createHmac } from 'node:crypto';
 import { describe, expect, it, vi } from 'vitest';
-import { InstagramTrigger } from './GramflowTrigger.node';
+import { GramflowTrigger } from './GramflowTrigger.node';
 
 const createWebhookContext = ({
   method = 'POST',
@@ -245,7 +245,7 @@ describe('InstagramTrigger webhook', () => {
 });
 
 describe('Instagram Trigger credential test', () => {
-  const credentialTest = new InstagramTrigger().methods.credentialTest.instagramTrigger;
+  const credentialTest = new InstagramTrigger().methods.credentialTest.GramflowTrigger;
   const context = {
     logger: { error: vi.fn(), debug: vi.fn() },
   } as unknown as ICredentialTestFunctions;

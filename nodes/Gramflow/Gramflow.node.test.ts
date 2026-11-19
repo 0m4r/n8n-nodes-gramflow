@@ -1,6 +1,6 @@
 import type { IExecuteFunctions, IHttpRequestOptions, ILoadOptionsFunctions } from 'n8n-workflow';
 import { describe, expect, it, vi } from 'vitest';
-import { Instagram } from './Gramflow.node';
+import { Gramflow } from './Gramflow.node';
 
 const createExecuteContext = (
   parameters: Record<string, unknown>,
@@ -48,7 +48,7 @@ describe('Instagram node request contracts', () => {
       new Instagram().methods.listSearch.searchInstagramAccounts.call(context),
     ).resolves.toEqual({ results: [{ name: 'Business | @Business', value: 'account-1' }] });
     expect(request).toHaveBeenCalledWith(
-      'instagramApi',
+      'gramflowApi',
       expect.objectContaining({ url: 'https://graph.instagram.com/v26.0/me' }),
     );
   });

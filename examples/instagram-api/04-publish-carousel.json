@@ -54,7 +54,7 @@
       "typeVersion": 1,
       "position": [460, 300],
       "credentials": {
-        "instagramApi": {
+        "gramflowApi": {
           "id": "1",
           "name": "Instagram API"
         }

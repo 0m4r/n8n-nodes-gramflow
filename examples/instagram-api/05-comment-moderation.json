@@ -31,7 +31,7 @@
       "typeVersion": 1,
       "position": [460, 300],
       "credentials": {
-        "instagramApi": {
+        "gramflowApi": {
           "id": "1",
           "name": "Instagram API"
         }
@@ -50,7 +50,7 @@
       "typeVersion": 1,
       "position": [680, 300],
       "credentials": {
-        "instagramApi": {
+        "gramflowApi": {
           "id": "1",
           "name": "Instagram API"
         }
@@ -74,7 +74,7 @@
       "typeVersion": 1,
       "position": [900, 300],
       "credentials": {
-        "instagramApi": {
+        "gramflowApi": {
           "id": "1",
           "name": "Instagram API"
         }

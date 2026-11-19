@@ -1,6 +1,6 @@
 import type { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 import { describe, expect, it, vi } from 'vitest';
-import { Instagram } from './Gramflow.node';
+import { Gramflow } from './Gramflow.node';
 import { interpretContainerStatus } from './containerStatus';
 
 const createExecutionContext = (statusResponse: Record<string, unknown>) => {
