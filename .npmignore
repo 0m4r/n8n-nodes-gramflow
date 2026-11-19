@@ -1,0 +1,9 @@
+# Ignore test files from publication
+**/*.test.js
+**/*.test.d.ts
+**/*.test.js.map
+**/*.spec.js
+**/*.spec.d.ts
+**/*.spec.js.map
+**/tests/**
+**/__tests__/**

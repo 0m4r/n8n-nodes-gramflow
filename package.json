@@ -46,7 +46,13 @@
     "typecheck": "npm exec -- tsc --noEmit"
   },
   "files": [
-    "dist"
+    "dist",
+    "!dist/**/*.test.js",
+    "!dist/**/*.test.d.ts",
+    "!dist/**/*.test.js.map",
+    "!dist/**/*.spec.js",
+    "!dist/**/*.spec.d.ts",
+    "!dist/**/*.spec.js.map"
   ],
   "n8n": {
     "n8nNodesApiVersion": 1,
