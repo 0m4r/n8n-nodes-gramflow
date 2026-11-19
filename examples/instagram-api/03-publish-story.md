@@ -52,7 +52,7 @@ curl -X POST "https://your-n8n-instance.com/webhook/publish-story" \
 
 ## Prerequisites
 
-- An **Instagram API** credential (`instagramApi`) configured with a long-lived access token.
+- An **Instagram API** credential (`gramflowApi`) configured with a long-lived access token.
 - Replace `YOUR_IG_USER_ID` with your Instagram Business/Creator account ID.
 
 ## How to use

@@ -26,7 +26,7 @@ This workflow uses a **Cron trigger** (every 12 hours).
 
 ## Prerequisites
 
-- An **Instagram API** credential (`instagramApi`) configured with a long-lived access token.
+- An **Instagram API** credential (`gramflowApi`) configured with a long-lived access token.
 - Replace `YOUR_IG_USER_ID` with the Instagram Business/Creator account ID you want to read.
 
 ## How to use

@@ -28,7 +28,7 @@ This workflow uses a **Cron trigger** (every 6 hours).
 
 ## Prerequisites
 
-- An **Instagram API** credential (`instagramApi`) configured with a long-lived access token.
+- An **Instagram API** credential (`gramflowApi`) configured with a long-lived access token.
 - Replace `YOUR_MEDIA_ID` with the ID of the Instagram media whose comments you want to manage.
 - Replace `YOUR_IG_USER_ID` with your Instagram Business/Creator account ID (used for sending private replies).
 - The Comments API operations need the target media ID or comment ID. This scheduled example uses a configured media ID; use [`14-list-recent-comments.json`](14-list-recent-comments.json) to discover recent media IDs from the authenticated account instead.

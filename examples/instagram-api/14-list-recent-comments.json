@@ -7,7 +7,10 @@
       "name": "Run Manually",
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
-      "position": [240, 300]
+      "position": [
+        240,
+        300
+      ]
     },
     {
       "parameters": {
@@ -17,9 +20,12 @@
       },
       "id": "instagram-1",
       "name": "Get My Account",
-      "type": "@0m4r/n8n-nodes-instagram.instagram",
+      "type": "@0m4r/n8n-nodes-gramflow.gramflow",
       "typeVersion": 1,
-      "position": [460, 300],
+      "position": [
+        460,
+        300
+      ],
       "credentials": {
         "gramflowApi": {
           "id": "1",
@@ -41,9 +47,12 @@
       },
       "id": "instagram-2",
       "name": "Get Recent Media",
-      "type": "@0m4r/n8n-nodes-instagram.instagram",
+      "type": "@0m4r/n8n-nodes-gramflow.gramflow",
       "typeVersion": 1,
-      "position": [700, 300],
+      "position": [
+        700,
+        300
+      ],
       "credentials": {
         "gramflowApi": {
           "id": "1",
@@ -60,7 +69,10 @@
       "name": "Split Media into Items",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [940, 300]
+      "position": [
+        940,
+        300
+      ]
     },
     {
       "parameters": {
@@ -71,9 +83,12 @@
       },
       "id": "instagram-3",
       "name": "List Comments",
-      "type": "@0m4r/n8n-nodes-instagram.instagram",
+      "type": "@0m4r/n8n-nodes-gramflow.gramflow",
       "typeVersion": 1,
-      "position": [1180, 300],
+      "position": [
+        1180,
+        300
+      ],
       "credentials": {
         "gramflowApi": {
           "id": "1",
@@ -84,16 +99,48 @@
   ],
   "connections": {
     "Run Manually": {
-      "main": [[{ "node": "Get My Account", "type": "main", "index": 0 }]]
+      "main": [
+        [
+          {
+            "node": "Get My Account",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     },
     "Get My Account": {
-      "main": [[{ "node": "Get Recent Media", "type": "main", "index": 0 }]]
+      "main": [
+        [
+          {
+            "node": "Get Recent Media",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     },
     "Get Recent Media": {
-      "main": [[{ "node": "Split Media into Items", "type": "main", "index": 0 }]]
+      "main": [
+        [
+          {
+            "node": "Split Media into Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     },
     "Split Media into Items": {
-      "main": [[{ "node": "List Comments", "type": "main", "index": 0 }]]
+      "main": [
+        [
+          {
+            "node": "List Comments",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "active": false,

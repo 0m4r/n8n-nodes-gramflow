@@ -24,7 +24,7 @@ This workflow uses a **Cron trigger** (every 24 hours).
 
 ## Prerequisites
 
-- An **Instagram API** credential (`instagramApi`) configured with a long-lived access token.
+- An **Instagram API** credential (`gramflowApi`) configured with a long-lived access token.
 - The credential's **API Endpoint** should be set to **Facebook Graph API** (`graph.facebook.com`).
 - Replace `YOUR_FACEBOOK_PAGE_ID` with the Facebook Page ID linked to your Instagram professional account.
 

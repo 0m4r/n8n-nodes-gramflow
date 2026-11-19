@@ -56,7 +56,7 @@ curl -X POST "https://your-n8n-instance.com/webhook/content-pipeline" \
 
 ## Prerequisites
 
-- An **Instagram API** credential (`instagramApi`) configured with a long-lived access token.
+- An **Instagram API** credential (`gramflowApi`) configured with a long-lived access token.
 
 ## How to use
 

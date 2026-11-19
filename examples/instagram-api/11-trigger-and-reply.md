@@ -20,7 +20,7 @@ This workflow listens for real-time Instagram webhook events (comments and messa
 ## Prerequisites
 
 - **Instagram Webhook API** credential (`instagramWebhookApi`) configured with your Meta App Secret.
-- **Instagram API** credential (`instagramApi`) configured with a **Facebook Page access token** whose **API Endpoint** is set to **Facebook Graph API** (`graph.facebook.com`). The token needs `instagram_manage_messages` to send private replies (a typical setup also includes `instagram_basic`, `instagram_manage_comments` and `pages_read_engagement`). The default `graph.instagram.com` (Instagram Login) endpoint does **not** support private replies.
+- **Instagram API** credential (`gramflowApi`) configured with a **Facebook Page access token** whose **API Endpoint** is set to **Facebook Graph API** (`graph.facebook.com`). The token needs `instagram_manage_messages` to send private replies (a typical setup also includes `instagram_basic`, `instagram_manage_comments` and `pages_read_engagement`). The default `graph.instagram.com` (Instagram Login) endpoint does **not** support private replies.
 - Replace `YOUR_VERIFY_TOKEN` with a secret string matching your Meta App Dashboard webhook settings.
 - Replace `YOUR_IG_USER_ID` with your Instagram Business/Creator account ID.
 - **Important**: Private replies can only be sent within 7 days of the comment being made. After 7 days, the Instagram API will return "Bad request - please check your parameters". Ensure the comment is recent before attempting to reply.

@@ -16,7 +16,10 @@
       "name": "Weekly Schedule",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.4,
-      "position": [240, 300]
+      "position": [
+        240,
+        300
+      ]
     },
     {
       "parameters": {
@@ -26,9 +29,12 @@
       },
       "id": "instagram-1",
       "name": "Refresh Access Token",
-      "type": "@0m4r/n8n-nodes-instagram.instagram",
+      "type": "@0m4r/n8n-nodes-gramflow.gramflow",
       "typeVersion": 1,
-      "position": [460, 300]
+      "position": [
+        460,
+        300
+      ]
     },
     {
       "parameters": {
@@ -38,9 +44,12 @@
       },
       "id": "instagram-2",
       "name": "Get /me",
-      "type": "@0m4r/n8n-nodes-instagram.instagram",
+      "type": "@0m4r/n8n-nodes-gramflow.gramflow",
       "typeVersion": 1,
-      "position": [680, 300]
+      "position": [
+        680,
+        300
+      ]
     }
   ],
   "connections": {

@@ -26,7 +26,7 @@ This workflow uses a **Cron trigger** (every 24 hours).
 
 ## Prerequisites
 
-- An **Instagram API** credential (`instagramApi`) configured with a long-lived access token.
+- An **Instagram API** credential (`gramflowApi`) configured with a long-lived access token.
 - The credential's **API Endpoint** should be set to **Facebook Graph API** (`graph.facebook.com`), because hashtag search requires Facebook Login.
 - Replace `"n8n"` with the hashtag you want to search (without the `#` symbol).
 

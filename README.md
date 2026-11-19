@@ -236,7 +236,7 @@ The recipient must have initiated a conversation with the professional account; 
 2. Choose an **Operation**:
    - `Exchange Access Token` – exchange a **short-lived** Instagram User access token for a **long-lived** token.
    - `Refresh Access Token` – refresh an existing long-lived token using the Instagram Platform refresh endpoint.
-   - `Get Me` – call the Graph API `/me` endpoint using the `instagramApi` credential’s access token.
+   - `Get Me` – call the Graph API `/me` endpoint using the `gramflowApi` credential’s access token.
 3. For **Exchange Access Token**, provide:
    - `Short-Lived Access Token` – the short-lived token from your login flow.
    - `App Secret` – the Instagram App Secret from your Meta App Dashboard.

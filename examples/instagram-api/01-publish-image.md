@@ -26,7 +26,7 @@ This workflow uses a **Cron trigger** (every 24 hours).
 
 ## Prerequisites
 
-- An **Instagram API** credential (`instagramApi`) configured with a long-lived access token.
+- An **Instagram API** credential (`gramflowApi`) configured with a long-lived access token.
 - Replace `YOUR_IG_USER_ID` with your Instagram Business/Creator account ID (or select from the account list).
 - Replace `https://example.com/images/photo.jpg` with a publicly accessible image URL that Meta can fetch.
 

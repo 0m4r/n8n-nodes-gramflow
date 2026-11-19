@@ -39,7 +39,10 @@ export class Gramflow implements INodeType {
   description: INodeTypeDescription = {
     displayName: 'Gramflow',
     name: 'gramflow',
-    icon: { light: 'file:../Gramflow/gramflow.svg', dark: 'file:../Gramflow/gramflow.dark.svg' },
+    icon: {
+      light: 'file:./gramflow.svg',
+      dark: 'file:./gramflow.dark.svg'
+    },
     group: ['transform'],
     version: 1,
     subtitle: '={{$parameter["operation"]}}',

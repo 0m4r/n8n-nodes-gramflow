@@ -16,7 +16,10 @@
       "name": "Daily Schedule",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.4,
-      "position": [240, 300]
+      "position": [
+        240,
+        300
+      ]
     },
     {
       "parameters": {
@@ -43,9 +46,12 @@
       },
       "id": "instagram-1",
       "name": "Publish Image",
-      "type": "@0m4r/n8n-nodes-instagram.instagram",
+      "type": "@0m4r/n8n-nodes-gramflow.gramflow",
       "typeVersion": 1,
-      "position": [460, 300],
+      "position": [
+        460,
+        300
+      ],
       "credentials": {
         "gramflowApi": {
           "id": "1",

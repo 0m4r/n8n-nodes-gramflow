@@ -104,8 +104,8 @@ export class GramflowTrigger implements INodeType {
     displayName: 'Gramflow Instagram Trigger',
     name: 'gramflowTrigger',
     icon: {
-      light: 'file:../GramflowTrigger/gramflow.svg',
-      dark: 'file:../GramflowTrigger/gramflow.dark.svg',
+      light: 'file:./gramflow.svg',
+      dark: 'file:./gramflow.dark.svg',
     },
     group: ['trigger'],
     version: 2,

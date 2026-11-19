@@ -7,7 +7,10 @@
       "name": "Run Manually",
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
-      "position": [240, 300]
+      "position": [
+        240,
+        300
+      ]
     },
     {
       "parameters": {
@@ -17,9 +20,12 @@
       },
       "id": "instagram-1",
       "name": "Get My Account",
-      "type": "@0m4r/n8n-nodes-instagram.instagram",
+      "type": "@0m4r/n8n-nodes-gramflow.gramflow",
       "typeVersion": 1,
-      "position": [460, 300],
+      "position": [
+        460,
+        300
+      ],
       "credentials": {
         "gramflowApi": {
           "id": "1",
@@ -41,9 +47,12 @@
       },
       "id": "instagram-2",
       "name": "Publish Image",
-      "type": "@0m4r/n8n-nodes-instagram.instagram",
+      "type": "@0m4r/n8n-nodes-gramflow.gramflow",
       "typeVersion": 1,
-      "position": [700, 300],
+      "position": [
+        700,
+        300
+      ],
       "credentials": {
         "gramflowApi": {
           "id": "1",
@@ -54,10 +63,26 @@
   ],
   "connections": {
     "Run Manually": {
-      "main": [[{ "node": "Get My Account", "type": "main", "index": 0 }]]
+      "main": [
+        [
+          {
+            "node": "Get My Account",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     },
     "Get My Account": {
-      "main": [[{ "node": "Publish Image", "type": "main", "index": 0 }]]
+      "main": [
+        [
+          {
+            "node": "Publish Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "active": false,

@@ -26,7 +26,7 @@ This workflow uses a **Cron trigger** (every 7 days).
 
 ## Prerequisites
 
-- An **Instagram API** credential (`instagramApi`) configured with a long-lived access token.
+- An **Instagram API** credential (`gramflowApi`) configured with a long-lived access token.
 - For `Exchange Access Token` (not shown in this workflow but available), you would also need your Meta App Secret.
 
 ## How to use
