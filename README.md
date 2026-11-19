@@ -1,6 +1,6 @@
 [![Publish](https://github.com/0m4r/n8n-nodes-gramflow/actions/workflows/publish.yml/badge.svg)](https://github.com/0m4r/n8n-nodes-gramflow/actions/workflows/publish.yml)
 
-# <img src="credentials/gramflow.svg" alt="gramflow" width="60" style="vertical-align:middle; margin-right: 10px;"> @0m4r/n8n-nodes-gramflow
+# <img src="credentials/gramflow.svg" alt="gramflow" width="60" style="vertical-align: middle; margin-right: 10px;"> @0m4r/n8n-nodes-gramflow
 
 ---
 
