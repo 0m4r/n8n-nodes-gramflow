@@ -1,0 +1,86 @@
+{
+  "name": "@0m4r/n8n-nodes-gramflow",
+  "version": "0.0.0",
+  "description": "Gramflow is a production-ready Instagram automation toolkit for n8n. Publish images, Reels, Stories, and carousels; moderate comments; send DMs; search hashtags; manage tokens; and react to real-time Instagram events\u2014using Meta's official Instagram and Facebook Graph APIs.",
+  "license": "MIT",
+  "homepage": "https://github.com/0m4r/n8n-nodes-gramflow#readme",
+  "keywords": [
+    "n8n-community-node-package",
+    "instagram",
+    "gramflow",
+    "automation",
+    "publishing",
+    "webhook",
+    "comments",
+    "dm",
+    "hashtag",
+    "stories",
+    "reels",
+    "carousel",
+    "meta",
+    "graph-api",
+    "social-media",
+    "bot",
+    "schedule"
+  ],
+  "author": {
+    "name": "0m4r",
+    "email": "omar.adobati@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0m4r/n8n-nodes-gramflow.git"
+  },
+  "scripts": {
+    "build": "n8n-node build",
+    "dev": "n8n-node dev",
+    "lint": "n8n-node lint",
+    "lint:fix": "n8n-node lint --fix",
+    "format": "npx prettier --config .prettierrc.js --write \"**/*.{ts,js,json,md}\"",
+    "setup-hooks": "husky",
+    "release:prepare": "npx n8n-node release --init-workflow",
+    "release:beta": "release-it --preRelease=beta --npm.publish=false",
+    "release": "release-it --npm.publish=false",
+    "prepublishOnly": "n8n-node prerelease",
+    "test": "node scripts/run-vitest.js",
+    "typecheck": "npm exec -- tsc --noEmit"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "strict": true,
+    "nodes": [
+      "dist/nodes/Gramflow/Gramflow.node.js",
+      "dist/nodes/GramflowTrigger/GramflowTrigger.node.js"
+    ],
+    "credentials": [
+      "dist/credentials/gramflowApi.credentials.js",
+      "dist/credentials/gramflowWebhookApi.credentials.js"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^21.2.3",
+    "@commitlint/config-conventional": "^21.2.3",
+    "@eslint/js": "^9.39.5",
+    "@n8n/node-cli": "^0.56.2",
+    "@types/estree": "^1.0.9",
+    "@types/json-schema": "^7.0.15",
+    "@types/node": "^24.18.0",
+    "auto-changelog": "^2.7.0",
+    "eslint": "^9.29.0",
+    "globals": "^17.13.0",
+    "husky": "^9.1.7",
+    "n8n-workflow": "2.41.2",
+    "prettier": "3.9.9",
+    "release-it": "^21.1.0",
+    "typescript": "^6",
+    "typescript-eslint": "^8.71.0",
+    "vite": "^8.3.8",
+    "vitest": "^5.0.3"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}

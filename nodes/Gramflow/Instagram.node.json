@@ -1,0 +1,18 @@
+{
+  "node": "@0m4r/n8n-nodes-gramflow.instagram",
+  "nodeVersion": "1.0",
+  "codexVersion": "1.0",
+  "categories": ["Communication"],
+  "resources": {
+    "credentialDocumentation": [
+      {
+        "url": "https://github.com/0m4r/n8n-nodes-gramflow#credentials"
+      }
+    ],
+    "primaryDocumentation": [
+      {
+        "url": "https://github.com/0m4r/n8n-nodes-gramflow#readme"
+      }
+    ]
+  }
+}

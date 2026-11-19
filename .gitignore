@@ -1,0 +1,45 @@
+# Dependencies
+node_modules
+.pnpm-store
+
+# Build output
+*.tsbuildinfo
+dist/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# n8n node specific
+.debug/
+*.local
+
+# Release-it
+.release-it.json
+
+# Git hooks
+.husky/
+
+# Documentation plans
+docs/plans/*
+
+# TypeScript
+*.module.css
+*.module.scss
