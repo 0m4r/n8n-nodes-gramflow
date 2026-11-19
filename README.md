@@ -1,11 +1,10 @@
-# @0m4r/n8n-nodes-gramflow
+# ![](credentials/gramflow.svg) @0m4r/n8n-nodes-gramflow
 
 ---
 
 > Gramflow is a production-ready Instagram automation toolkit for n8n. Publish images, Reels, Stories, and carousels; moderate comments; send DMs; search hashtags; manage tokens; and react to real-time Instagram events—using Meta's official Instagram and Facebook Graph APIs.
 
 ---
-
 
 This package’s Instagram nodes for n8n let you publish and manage content, moderate comments, send DMs, and react to real-time events (comments, messages, mentions, story insights, etc.) on Instagram Business and Creator accounts via the Facebook/Instagram Graph API.
 
@@ -37,7 +36,7 @@ The node exposes several resources:
 | `Carousel`            | Publish a carousel (album) post with up to 10 images and/or videos. The node creates child containers, builds a carousel container, waits for it to be ready, then publishes it. Includes detailed per-item error reporting and progress messages.              |
 | `Comments`            | List comments on media, hide/unhide or delete individual comments, disable/enable comments on media, and send **private replies** to commenters.                                                                                                                |
 | `IG User`             | Read basic profile data for an Instagram Business/Creator account and list its media using the IG User Graph API.                                                                                                                                               |
-| `IG Hashtag`          | Search for hashtags by name and fetch top or recent media for a hashtag with cursor pagination and limit/return-all support.                                                                                                                                   |
+| `IG Hashtag`          | Search for hashtags by name and fetch top or recent media for a hashtag with cursor pagination and limit/return-all support.                                                                                                                                    |
 | `Messaging`           | Send direct messages (DMs) to Instagram users via the Instagram Messaging API.                                                                                                                                                                                  |
 | `Page`                | Given a Facebook Page ID, fetch the connected Instagram Business/Creator account (`instagram_business_account`).                                                                                                                                                |
 | `Auth`                | Exchange short-lived Instagram User tokens for long-lived tokens, refresh long-lived tokens, and call the Graph API `/me` endpoint.                                                                                                                             |
