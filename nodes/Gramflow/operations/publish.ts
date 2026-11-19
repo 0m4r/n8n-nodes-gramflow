@@ -314,7 +314,7 @@ export async function handlePublish(
       operation,
       mediaRequestOptions,
       () =>
-        ctx.helpers.httpRequestWithAuthentication.call(ctx, 'instagramApi', mediaRequestOptions),
+        ctx.helpers.httpRequestWithAuthentication.call(ctx, 'gramflowApi', mediaRequestOptions),
     )) as IDataObject | string;
   } catch (error: unknown) {
     type ResponseErrorType = {
@@ -458,7 +458,7 @@ export async function handlePublish(
         () =>
           ctx.helpers.httpRequestWithAuthentication.call(
             ctx,
-            'instagramApi',
+            'gramflowApi',
             publishRequestOptions,
           ),
       )) as IDataObject | string;

@@ -84,7 +84,7 @@ export async function handleMessaging(
       // (Facebook Login), depending on the credential configuration.
       let hostUrl = 'graph.facebook.com'; // Default for messaging API backward compatibility
       try {
-        const credentials = await ctx.getCredentials('instagramApi');
+        const credentials = await ctx.getCredentials('gramflowApi');
         if (credentials?.apiEndpoint && typeof credentials.apiEndpoint === 'string') {
           hostUrl = credentials.apiEndpoint;
         }
@@ -119,7 +119,7 @@ export async function handleMessaging(
           'operations/messaging.ts:handleMessaging',
           operation,
           requestOptions,
-          () => ctx.helpers.httpRequestWithAuthentication.call(ctx, 'instagramApi', requestOptions),
+          () => ctx.helpers.httpRequestWithAuthentication.call(ctx, 'gramflowApi', requestOptions),
         )) as IDataObject;
 
         if (!response || typeof response !== 'object') {

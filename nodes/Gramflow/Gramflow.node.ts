@@ -35,7 +35,7 @@ const operationHandlers: Partial<Record<string, typeof handlePublish>> = {
   stories: handlePublish,
 };
 
-export class Instagram implements INodeType {
+export class Gramflow implements INodeType {
   description: INodeTypeDescription = {
     displayName: 'Gramflow',
     name: 'gramflow',
@@ -75,7 +75,7 @@ export class Instagram implements INodeType {
           // Get API endpoint from credentials
           let hostUrl = 'graph.instagram.com';
           try {
-            const credentials = await this.getCredentials('instagramApi');
+            const credentials = await this.getCredentials('gramflowApi');
             if (credentials?.apiEndpoint && typeof credentials.apiEndpoint === 'string') {
               hostUrl = credentials.apiEndpoint;
             }
@@ -103,7 +103,7 @@ export class Instagram implements INodeType {
             'searchInstagramAccounts',
             requestOptions,
             () =>
-              this.helpers.httpRequestWithAuthentication.call(this, 'instagramApi', requestOptions),
+              this.helpers.httpRequestWithAuthentication.call(this, 'gramflowApi', requestOptions),
           )) as IDataObject;
 
           // Add the account from /me response
@@ -135,7 +135,7 @@ export class Instagram implements INodeType {
     // Get API endpoint from credentials
     let hostUrl = 'graph.instagram.com';
     try {
-      const credentials = await this.getCredentials('instagramApi');
+      const credentials = await this.getCredentials('gramflowApi');
       if (credentials?.apiEndpoint && typeof credentials.apiEndpoint === 'string') {
         hostUrl = credentials.apiEndpoint;
       }

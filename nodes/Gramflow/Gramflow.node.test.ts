@@ -1,6 +1,6 @@
 import type { IExecuteFunctions, IHttpRequestOptions, ILoadOptionsFunctions } from 'n8n-workflow';
 import { describe, expect, it, vi } from 'vitest';
-import { Instagram } from './Gramflow.node';
+import { Gramflow } from './Gramflow.node';
 
 const createExecuteContext = (
   parameters: Record<string, unknown>,
@@ -28,8 +28,8 @@ const createExecuteContext = (
 
 describe('Instagram node request contracts', () => {
   it('describes the node capabilities in the editor', () => {
-    expect(new Instagram().description.description).toContain('moderate comments');
-    expect(new Instagram().description.description).toContain('access account and hashtag data');
+    expect(new Gramflow().description.description).toContain('moderate comments');
+    expect(new Gramflow().description.description).toContain('access account and hashtag data');
   });
 
   it('maps account list-search results and honors the configured API host', async () => {
@@ -45,10 +45,10 @@ describe('Instagram node request contracts', () => {
     } as unknown as ILoadOptionsFunctions;
 
     await expect(
-      new Instagram().methods.listSearch.searchInstagramAccounts.call(context),
+      new Gramflow().methods.listSearch.searchInstagramAccounts.call(context),
     ).resolves.toEqual({ results: [{ name: 'Business | @Business', value: 'account-1' }] });
     expect(request).toHaveBeenCalledWith(
-      'instagramApi',
+      'gramflowApi',
       expect.objectContaining({ url: 'https://graph.instagram.com/v26.0/me' }),
     );
   });
@@ -62,7 +62,7 @@ describe('Instagram node request contracts', () => {
     } as unknown as ILoadOptionsFunctions;
 
     await expect(
-      new Instagram().methods.listSearch.searchInstagramAccounts.call(context),
+      new Gramflow().methods.listSearch.searchInstagramAccounts.call(context),
     ).resolves.toEqual({ results: [] });
   });
 
@@ -79,7 +79,7 @@ describe('Instagram node request contracts', () => {
       { message_id: 'message-1' },
     );
 
-    await expect(new Instagram().execute.call(context)).resolves.toEqual([
+    await expect(new Gramflow().execute.call(context)).resolves.toEqual([
       [{ json: { message_id: 'message-1' }, pairedItem: { item: 0 } }],
     ]);
     expect(requests).toEqual([
@@ -105,7 +105,7 @@ describe('Instagram node request contracts', () => {
       'graph.instagram.com',
     );
 
-    await expect(new Instagram().execute.call(context)).resolves.toEqual([
+    await expect(new Gramflow().execute.call(context)).resolves.toEqual([
       [{ json: { recipient_id: 'scoped-1', message_id: 'message-1' }, pairedItem: { item: 0 } }],
     ]);
     expect(requests).toEqual([
@@ -134,7 +134,7 @@ describe('Instagram node request contracts', () => {
       'graph.facebook.com',
     );
 
-    await expect(new Instagram().execute.call(context)).resolves.toEqual([
+    await expect(new Gramflow().execute.call(context)).resolves.toEqual([
       [{ json: { recipient_id: 'scoped-1', message_id: 'message-1' }, pairedItem: { item: 0 } }],
     ]);
     expect(requests).toEqual([
@@ -156,7 +156,7 @@ describe('Instagram node request contracts', () => {
       'graph.instagram.com',
     );
 
-    await expect(new Instagram().execute.call(context)).resolves.toEqual([
+    await expect(new Gramflow().execute.call(context)).resolves.toEqual([
       [{ json: { id: 'ig-user-1', username: 'creator' }, pairedItem: { item: 0 } }],
     ]);
     expect(requests[0]).toMatchObject({
@@ -177,7 +177,7 @@ describe('Instagram node request contracts', () => {
       { id: 'ig-user-1', username: 'creator' },
     );
 
-    await expect(new Instagram().execute.call(context)).resolves.toEqual([
+    await expect(new Gramflow().execute.call(context)).resolves.toEqual([
       [{ json: { id: 'ig-user-1', username: 'creator' }, pairedItem: { item: 0 } }],
     ]);
     expect(requests[0]).toMatchObject({
@@ -225,7 +225,7 @@ describe('Instagram node request contracts', () => {
       logger: { error: vi.fn(), info: vi.fn(), warn: vi.fn(), debug: vi.fn() },
     } as unknown as IExecuteFunctions;
 
-    await expect(new Instagram().execute.call(context)).rejects.toMatchObject({
+    await expect(new Gramflow().execute.call(context)).rejects.toMatchObject({
       description: 'The hashtag query is not supported for this account.',
       httpCode: '400',
     });
@@ -243,7 +243,7 @@ describe('Instagram node request contracts', () => {
       { data: [{ id: 'hashtag-1' }] },
     );
 
-    await expect(new Instagram().execute.call(context)).resolves.toEqual([
+    await expect(new Gramflow().execute.call(context)).resolves.toEqual([
       [{ json: { data: [{ id: 'hashtag-1' }] }, pairedItem: { item: 0 } }],
     ]);
     expect(requests[0]).toMatchObject({
@@ -259,7 +259,7 @@ describe('Instagram node request contracts', () => {
       {},
     );
 
-    await expect(new Instagram().execute.call(context)).rejects.toThrow(
+    await expect(new Gramflow().execute.call(context)).rejects.toThrow(
       'Failed to get node parameter at item index 0',
     );
     expect(requests).toHaveLength(0);
@@ -271,7 +271,7 @@ describe('Instagram node request contracts', () => {
       {},
     );
 
-    await expect(new Instagram().execute.call(context)).rejects.toThrow(/Unsupported operation/);
+    await expect(new Gramflow().execute.call(context)).rejects.toThrow(/Unsupported operation/);
     expect(requests).toHaveLength(0);
   });
 
@@ -286,7 +286,7 @@ describe('Instagram node request contracts', () => {
       { instagram_business_account: { id: 'ig-account-1' } },
     );
 
-    await expect(new Instagram().execute.call(context)).resolves.toEqual([
+    await expect(new Gramflow().execute.call(context)).resolves.toEqual([
       [{ json: { instagram_business_account: { id: 'ig-account-1' } }, pairedItem: { item: 0 } }],
     ]);
     expect(requests[0]).toMatchObject({

@@ -5,7 +5,7 @@ This repository is a single-package TypeScript n8n community node for Instagram 
 ## Repository layout
 
 - `nodes/Instagram/`: node description, operation/resource implementations, helpers, and tests.
-- `nodes/InstagramTrigger/`: webhook trigger implementation and tests.
+- `nodes/gramflowTrigger/`: webhook trigger implementation and tests.
 - `credentials/`: API and webhook credential definitions and tests.
 - `examples/`: example workflows and walkthroughs; keep paired `.json` and `.md` examples consistent.
 - `scripts/`: wrappers used by the test, lint, and typecheck commands.

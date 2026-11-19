@@ -79,7 +79,7 @@ export async function handleIgHashtag(
           'operations/igHashtag.ts:handleIgHashtag',
           operation,
           requestOptions,
-          () => ctx.helpers.httpRequestWithAuthentication.call(ctx, 'instagramApi', requestOptions),
+          () => ctx.helpers.httpRequestWithAuthentication.call(ctx, 'gramflowApi', requestOptions),
         )) as IDataObject;
 
         if (!response || typeof response !== 'object') {

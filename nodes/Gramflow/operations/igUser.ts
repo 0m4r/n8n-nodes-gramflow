@@ -67,7 +67,7 @@ export async function handleIgUser(
           'operations/igUser.ts:handleIgUser',
           operation,
           requestOptions,
-          () => ctx.helpers.httpRequestWithAuthentication.call(ctx, 'instagramApi', requestOptions),
+          () => ctx.helpers.httpRequestWithAuthentication.call(ctx, 'gramflowApi', requestOptions),
         )) as IDataObject;
 
         if (!response || typeof response !== 'object') {

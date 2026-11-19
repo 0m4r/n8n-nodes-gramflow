@@ -24,7 +24,7 @@ export async function handleAuth(
       if (!token) {
         let credentials;
         try {
-          credentials = (await ctx.getCredentials('instagramApi')) as {
+          credentials = (await ctx.getCredentials('gramflowApi')) as {
             accessToken?: string;
           } | null;
         } catch (error) {
@@ -207,7 +207,7 @@ export async function handleAuth(
           'operations/auth.ts:handleAuth',
           operation,
           requestOptions,
-          () => ctx.helpers.httpRequestWithAuthentication.call(ctx, 'instagramApi', requestOptions),
+          () => ctx.helpers.httpRequestWithAuthentication.call(ctx, 'gramflowApi', requestOptions),
         )) as IDataObject;
 
         if (!response || typeof response !== 'object') {

@@ -5,7 +5,7 @@ import type {
 } from 'n8n-workflow';
 import { createHmac } from 'node:crypto';
 import { describe, expect, it, vi } from 'vitest';
-import { InstagramTrigger } from './GramflowTrigger.node';
+import { GramflowTrigger } from './GramflowTrigger.node';
 
 const createWebhookContext = ({
   method = 'POST',
@@ -54,7 +54,7 @@ describe('InstagramTrigger webhook', () => {
       },
     });
 
-    await expect(new InstagramTrigger().webhook.call(context)).resolves.toEqual({
+    await expect(new GramflowTrigger().webhook.call(context)).resolves.toEqual({
       webhookResponse: 'challenge-value',
     });
   });
@@ -66,7 +66,7 @@ describe('InstagramTrigger webhook', () => {
       query: { hub_mode: 'subscribe', hub_challenge: 'challenge', hub_verify_token: 'wrong-token' },
     });
 
-    await expect(new InstagramTrigger().webhook.call(context)).resolves.toEqual({
+    await expect(new GramflowTrigger().webhook.call(context)).resolves.toEqual({
       webhookResponse: 'Forbidden',
       noWebhookResponse: false,
     });
@@ -83,7 +83,7 @@ describe('InstagramTrigger webhook', () => {
       parameters: { skipSignatureVerification: false },
     });
 
-    await expect(new InstagramTrigger().webhook.call(context)).resolves.toEqual({
+    await expect(new GramflowTrigger().webhook.call(context)).resolves.toEqual({
       webhookResponse: 'OK',
     });
   });
@@ -96,7 +96,7 @@ describe('InstagramTrigger webhook', () => {
       parameters: { skipSignatureVerification: false },
     });
 
-    await expect(new InstagramTrigger().webhook.call(context)).resolves.toEqual({
+    await expect(new GramflowTrigger().webhook.call(context)).resolves.toEqual({
       noWebhookResponse: true,
     });
     expect(context.mockResponse.status).toHaveBeenCalledWith(401);
@@ -122,7 +122,7 @@ describe('InstagramTrigger webhook', () => {
       parameters: { eventsToInclude: ['comments', 'messages'], skipSignatureVerification: true },
     });
 
-    await expect(new InstagramTrigger().webhook.call(context)).resolves.toEqual({
+    await expect(new GramflowTrigger().webhook.call(context)).resolves.toEqual({
       webhookResponse: 'OK',
       workflowData: [
         [
@@ -168,7 +168,7 @@ describe('InstagramTrigger webhook', () => {
       parameters: { eventsToInclude: ['comments'], skipSignatureVerification: true },
     });
 
-    await expect(new InstagramTrigger().webhook.call(context)).resolves.toEqual({
+    await expect(new GramflowTrigger().webhook.call(context)).resolves.toEqual({
       webhookResponse: 'OK',
       workflowData: [
         [
@@ -208,7 +208,7 @@ describe('InstagramTrigger webhook', () => {
       parameters: { eventsToInclude: ['messaging_reactions'], skipSignatureVerification: true },
     });
 
-    await expect(new InstagramTrigger().webhook.call(context)).resolves.toMatchObject({
+    await expect(new GramflowTrigger().webhook.call(context)).resolves.toMatchObject({
       workflowData: [
         [
           {
@@ -223,7 +223,7 @@ describe('InstagramTrigger webhook', () => {
   });
 
   it('acknowledges non-Instagram and empty payloads without workflow data', async () => {
-    const trigger = new InstagramTrigger();
+    const trigger = new GramflowTrigger();
 
     await expect(
       trigger.webhook.call(
@@ -245,7 +245,7 @@ describe('InstagramTrigger webhook', () => {
 });
 
 describe('Instagram Trigger credential test', () => {
-  const credentialTest = new InstagramTrigger().methods.credentialTest.instagramTrigger;
+  const credentialTest = new GramflowTrigger().methods.credentialTest.GramflowTrigger;
   const context = {
     logger: { error: vi.fn(), debug: vi.fn() },
   } as unknown as ICredentialTestFunctions;

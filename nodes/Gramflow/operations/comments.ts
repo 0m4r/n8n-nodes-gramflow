@@ -65,7 +65,7 @@ export async function handleComments(
           'operations/comments.ts:handleComments',
           operation,
           requestOptions,
-          () => ctx.helpers.httpRequestWithAuthentication.call(ctx, 'instagramApi', requestOptions),
+          () => ctx.helpers.httpRequestWithAuthentication.call(ctx, 'gramflowApi', requestOptions),
         )) as IDataObject;
 
         if (!response || typeof response !== 'object') {
@@ -127,7 +127,7 @@ export async function handleComments(
           'operations/comments.ts:handleComments',
           operation,
           requestOptions,
-          () => ctx.helpers.httpRequestWithAuthentication.call(ctx, 'instagramApi', requestOptions),
+          () => ctx.helpers.httpRequestWithAuthentication.call(ctx, 'gramflowApi', requestOptions),
         )) as IDataObject;
 
         if (!response || typeof response !== 'object') {
@@ -185,7 +185,7 @@ export async function handleComments(
           'operations/comments.ts:handleComments',
           operation,
           requestOptions,
-          () => ctx.helpers.httpRequestWithAuthentication.call(ctx, 'instagramApi', requestOptions),
+          () => ctx.helpers.httpRequestWithAuthentication.call(ctx, 'gramflowApi', requestOptions),
         )) as IDataObject;
 
         if (!response || typeof response !== 'object') {
@@ -247,7 +247,7 @@ export async function handleComments(
           'operations/comments.ts:handleComments',
           operation,
           requestOptions,
-          () => ctx.helpers.httpRequestWithAuthentication.call(ctx, 'instagramApi', requestOptions),
+          () => ctx.helpers.httpRequestWithAuthentication.call(ctx, 'gramflowApi', requestOptions),
         )) as IDataObject;
 
         if (!response || typeof response !== 'object') {
@@ -325,7 +325,7 @@ export async function handleComments(
       //
       let hostUrl = 'graph.facebook.com'; // Default for messaging API backward compatibility
       try {
-        const credentials = await ctx.getCredentials('instagramApi');
+        const credentials = await ctx.getCredentials('gramflowApi');
         if (credentials?.apiEndpoint && typeof credentials.apiEndpoint === 'string') {
           hostUrl = credentials.apiEndpoint;
         }
@@ -360,7 +360,7 @@ export async function handleComments(
           'operations/comments.ts:handleComments',
           operation,
           requestOptions,
-          () => ctx.helpers.httpRequestWithAuthentication.call(ctx, 'instagramApi', requestOptions),
+          () => ctx.helpers.httpRequestWithAuthentication.call(ctx, 'gramflowApi', requestOptions),
         )) as IDataObject;
 
         if (!response || typeof response !== 'object') {

@@ -1,6 +1,6 @@
 import type { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 import { describe, expect, it, vi } from 'vitest';
-import { Instagram } from './Gramflow.node';
+import { Gramflow } from './Gramflow.node';
 import { interpretContainerStatus } from './containerStatus';
 
 const createExecutionContext = (statusResponse: Record<string, unknown>) => {
@@ -56,7 +56,7 @@ describe('container status interpretation', () => {
   it('publishes after a valid finished container status', async () => {
     const { context, requests } = createExecutionContext({ status_code: 'FINISHED' });
 
-    await expect(new Instagram().execute.call(context)).resolves.toEqual([
+    await expect(new Gramflow().execute.call(context)).resolves.toEqual([
       [{ json: { id: 'published-media' }, pairedItem: { item: 0 } }],
     ]);
     expect(requests.some((request) => request.url.endsWith('/media_publish'))).toBe(true);
@@ -68,7 +68,7 @@ describe('container status interpretation', () => {
       status: 'ERROR',
     });
 
-    await expect(new Instagram().execute.call(context)).rejects.toThrow(
+    await expect(new Gramflow().execute.call(context)).rejects.toThrow(
       'Authoritative status: ERROR',
     );
     expect(requests.some((request) => request.url.endsWith('/media_publish'))).toBe(false);
@@ -80,7 +80,7 @@ describe('container status interpretation', () => {
       error_message: 'The uploaded media could not be processed.',
     });
 
-    await expect(new Instagram().execute.call(context)).rejects.toThrow(
+    await expect(new Gramflow().execute.call(context)).rejects.toThrow(
       'The uploaded media could not be processed.',
     );
     expect(requests.some((request) => request.url.endsWith('/media_publish'))).toBe(false);

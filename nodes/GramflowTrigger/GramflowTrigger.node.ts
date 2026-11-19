@@ -55,21 +55,21 @@ const INSTAGRAM_WEBHOOK_FIELDS = [
   },
 ] as const;
 
-export class InstagramTrigger implements INodeType {
+export class GramflowTrigger implements INodeType {
   methods = {
     credentialTest: {
-      async instagramTrigger(
+      async GramflowTrigger(
         this: ICredentialTestFunctions,
         credential: ICredentialsDecrypted,
       ): Promise<INodeCredentialTestResult> {
         const appSecret = credential.data?.appSecret;
         const hasAppSecret = typeof appSecret === 'string' && appSecret.length > 0;
         const logContext = {
-          file: 'InstagramTrigger.node.ts',
-          function: 'credentialTest.instagramTrigger',
+          file: 'GramflowTrigger.node.ts',
+          function: 'credentialTest.GramflowTrigger',
         };
         this.logger.debug(
-          '[InstagramTrigger.node.ts:credentialTest.instagramTrigger] Testing webhook credential',
+          '[GramflowTrigger.node.ts:credentialTest.GramflowTrigger] Testing webhook credential',
           {
             ...logContext,
             appSecretConfigured: hasAppSecret,
@@ -78,7 +78,7 @@ export class InstagramTrigger implements INodeType {
 
         if (!hasAppSecret) {
           this.logger.error(
-            '[InstagramTrigger.node.ts:credentialTest.instagramTrigger] App Secret is missing',
+            '[GramflowTrigger.node.ts:credentialTest.GramflowTrigger] App Secret is missing',
             logContext,
           );
           return {
@@ -88,7 +88,7 @@ export class InstagramTrigger implements INodeType {
         }
 
         this.logger.debug(
-          '[InstagramTrigger.node.ts:credentialTest.instagramTrigger] App Secret is present; signature validity is checked on webhook delivery',
+          '[GramflowTrigger.node.ts:credentialTest.GramflowTrigger] App Secret is present; signature validity is checked on webhook delivery',
           logContext,
         );
         return {
@@ -121,7 +121,7 @@ export class InstagramTrigger implements INodeType {
       {
         name: 'gramflowWebhookApi',
         required: true,
-        testedBy: 'instagramTrigger',
+        testedBy: 'GramflowTrigger',
         displayOptions: { show: { skipSignatureVerification: [false] } },
       },
     ],
@@ -219,16 +219,16 @@ export class InstagramTrigger implements INodeType {
 
     if (skipVerification) {
       this.logger.debug(
-        '[InstagramTrigger.node.ts:webhook] Skipping signature verification by configuration',
+        '[GramflowTrigger.node.ts:webhook] Skipping signature verification by configuration',
         {
-          file: 'InstagramTrigger.node.ts',
+          file: 'GramflowTrigger.node.ts',
           function: 'webhook',
         },
       );
     }
 
     if (!skipVerification) {
-      const logContext = { file: 'InstagramTrigger.node.ts', function: 'webhook' };
+      const logContext = { file: 'GramflowTrigger.node.ts', function: 'webhook' };
       const request = this.getRequestObject();
       await request.readRawBody();
       const rawBody = request.rawBody;
@@ -237,7 +237,7 @@ export class InstagramTrigger implements INodeType {
       let appSecret = '';
 
       this.logger.debug(
-        '[InstagramTrigger.node.ts:webhook] Checking signature verification inputs',
+        '[GramflowTrigger.node.ts:webhook] Checking signature verification inputs',
         {
           ...logContext,
           signatureHeaderPresent: signature.length > 0,
@@ -250,7 +250,7 @@ export class InstagramTrigger implements INodeType {
         appSecret = typeof credentials.appSecret === 'string' ? credentials.appSecret : '';
       } catch (error) {
         appSecret = '';
-        this.logger.error('[InstagramTrigger.node.ts:webhook] Failed to read webhook credential', {
+        this.logger.error('[GramflowTrigger.node.ts:webhook] Failed to read webhook credential', {
           ...logContext,
           errorMessage: error instanceof Error ? error.message : String(error),
         });
@@ -263,7 +263,7 @@ export class InstagramTrigger implements INodeType {
 
       if (!appSecret || !Buffer.isBuffer(rawBody)) {
         this.logger.error(
-          '[InstagramTrigger.node.ts:webhook] Signature verification is unavailable',
+          '[GramflowTrigger.node.ts:webhook] Signature verification is unavailable',
           {
             ...logContext,
             appSecretConfigured: appSecret.length > 0,
@@ -276,7 +276,7 @@ export class InstagramTrigger implements INodeType {
       const digest = signature.startsWith('sha256=') ? signature.slice(7) : '';
       if (!/^[\da-f]{64}$/i.test(digest)) {
         this.logger.error(
-          '[InstagramTrigger.node.ts:webhook] Signature header has an invalid format',
+          '[GramflowTrigger.node.ts:webhook] Signature header has an invalid format',
           {
             ...logContext,
             signatureHeaderPresent: signature.length > 0,
@@ -290,7 +290,7 @@ export class InstagramTrigger implements INodeType {
       const receivedDigest = Buffer.from(digest, 'hex');
       if (!timingSafeEqual(expectedDigest, receivedDigest)) {
         this.logger.error(
-          '[InstagramTrigger.node.ts:webhook] Signature does not match the configured App Secret',
+          '[GramflowTrigger.node.ts:webhook] Signature does not match the configured App Secret',
           {
             ...logContext,
           },
@@ -299,7 +299,7 @@ export class InstagramTrigger implements INodeType {
       }
 
       this.logger.debug(
-        '[InstagramTrigger.node.ts:webhook] Signature verified successfully',
+        '[GramflowTrigger.node.ts:webhook] Signature verified successfully',
         logContext,
       );
     }

@@ -373,7 +373,7 @@ export async function handleCarousel(
           () =>
             ctx.helpers.httpRequestWithAuthentication.call(
               ctx,
-              'instagramApi',
+              'gramflowApi',
               childRequestOptions,
             ),
         );
@@ -464,7 +464,7 @@ export async function handleCarousel(
         () =>
           ctx.helpers.httpRequestWithAuthentication.call(
             ctx,
-            'instagramApi',
+            'gramflowApi',
             carouselRequestOptions,
           ),
       );
@@ -517,7 +517,7 @@ export async function handleCarousel(
         'operations/carousel.ts:handleCarousel',
         operation,
         publishOptions,
-        () => ctx.helpers.httpRequestWithAuthentication.call(ctx, 'instagramApi', publishOptions),
+        () => ctx.helpers.httpRequestWithAuthentication.call(ctx, 'gramflowApi', publishOptions),
       );
     } catch (error) {
       throw toNodeError(ctx.getNode(), error);

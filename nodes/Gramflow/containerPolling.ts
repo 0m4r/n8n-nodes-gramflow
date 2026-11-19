@@ -101,7 +101,7 @@ export const waitForContainerReady = async (
         'pollContainerStatus',
         pollRequestOptions,
         () =>
-          ctx.helpers.httpRequestWithAuthentication.call(ctx, 'instagramApi', pollRequestOptions),
+          ctx.helpers.httpRequestWithAuthentication.call(ctx, 'gramflowApi', pollRequestOptions),
       )) as IDataObject;
 
       if (!statusResponse || typeof statusResponse !== 'object') {
