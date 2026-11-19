@@ -1,4 +1,4 @@
-# ![](credentials/gramflow.svg) @0m4r/n8n-nodes-gramflow
+# @0m4r/n8n-nodes-gramflow ![gramflow](credentials/gramflow.svg)
 
 ---
 
